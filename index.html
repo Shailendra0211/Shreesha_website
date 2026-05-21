@@ -1068,26 +1068,46 @@
 </section>
 
 <!-- =================== CONTACT =================== -->
+<!-- =================== CONTACT =================== -->
 <section class="contact-section" id="contact">
     <div class="container">
-        <h2 class="section-title" data-aos="fade-up">Get In <span>Touch</span></h2>
-        <p class="section-subtitle" data-aos="fade-up">Have questions? We'd love to hear from you!</p>
+
+        <h2 class="section-title" data-aos="fade-up">
+            Get In <span>Touch</span>
+        </h2>
+
+        <p class="section-subtitle" data-aos="fade-up">
+            Have questions? We'd love to hear from you!
+        </p>
 
         <div class="row g-4">
+
+            <!-- CONTACT INFO -->
             <div class="col-lg-5" data-aos="fade-right">
+
                 <div class="contact-info-card">
+
                     <h4>Contact Information</h4>
 
                     <div class="contact-item">
-                        <div class="contact-item-icon"><i class="bi bi-geo-alt-fill"></i></div>
+                        <div class="contact-item-icon">
+                            <i class="bi bi-geo-alt-fill"></i>
+                        </div>
+
                         <div class="contact-item-text">
                             <h6>Address</h6>
-                            <p>Zeal Chowk, Narhe, Pune - 411041, Maharashtra, India</p>
+                            <p>
+                                Zeal Chowk, Narhe, Pune - 411041,
+                                Maharashtra, India
+                            </p>
                         </div>
                     </div>
 
                     <div class="contact-item">
-                        <div class="contact-item-icon"><i class="bi bi-telephone-fill"></i></div>
+                        <div class="contact-item-icon">
+                            <i class="bi bi-telephone-fill"></i>
+                        </div>
+
                         <div class="contact-item-text">
                             <h6>Phone</h6>
                             <p>+91 9922868252</p>
@@ -1095,66 +1115,155 @@
                     </div>
 
                     <div class="contact-item">
-                        <div class="contact-item-icon"><i class="bi bi-envelope-fill"></i></div>
+                        <div class="contact-item-icon">
+                            <i class="bi bi-envelope-fill"></i>
+                        </div>
+
                         <div class="contact-item-text">
                             <h6>Email</h6>
-                            <p>info@shreeshahostel.com</p>
+                            <p>shailendrafalle02@gmail.com</p>
                         </div>
                     </div>
 
                     <div class="contact-item">
-                        <div class="contact-item-icon"><i class="bi bi-clock-fill"></i></div>
+                        <div class="contact-item-icon">
+                            <i class="bi bi-clock-fill"></i>
+                        </div>
+
                         <div class="contact-item-text">
                             <h6>Office Hours</h6>
                             <p>Mon - Sat: 9:00 AM - 9:00 PM</p>
                         </div>
                     </div>
 
-                    <div class="social-links">
-                        <a href=""><i class="bi bi-facebook"></i></a>
-                        <a href=""><i class="bi bi-instagram"></i></a>
-                        <a href=""><i class="bi bi-whatsapp"></i></a>
-                        <a href=""><i class="bi bi-youtube"></i></a>
-                    </div>
                 </div>
+
             </div>
+
+            <!-- CONTACT FORM -->
             <div class="col-lg-7" data-aos="fade-left">
+
                 <div class="contact-form">
+
                     <h4>Send us a Message</h4>
-                    <form action="ContactServlet" method="post">
+
+                    <form id="contact-form">
+
                         <div class="row g-3">
+
                             <div class="col-md-6">
-                                <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+                                <input type="text"
+                                       id="name"
+                                       class="form-control"
+                                       placeholder="Your Name"
+                                       required>
                             </div>
+
                             <div class="col-md-6">
-                                <input type="tel" name="phone" class="form-control" placeholder="Phone Number" required>
+                                <input type="tel"
+                                       id="phone"
+                                       class="form-control"
+                                       placeholder="Phone Number"
+                                       required>
                             </div>
+
                             <div class="col-md-6">
-                                <input type="email" name="email" class="form-control" placeholder="Email Address" required>
+                                <input type="email"
+                                       id="email"
+                                       class="form-control"
+                                       placeholder="Email Address"
+                                       required>
                             </div>
+
                             <div class="col-md-6">
-                                <select name="roomType" class="form-control" required>
-                                    <option value="" disabled selected>Select Room Type</option>
+
+                                <select id="roomType"
+                                        class="form-control"
+                                        required>
+
+                                    <option value=""
+                                            disabled
+                                            selected>
+
+                                        Select Room Type
+
+                                    </option>
+
                                     <option>Single Sharing</option>
                                     <option>Double Sharing</option>
                                     <option>Triple Sharing</option>
+
                                 </select>
+
                             </div>
+
                             <div class="col-12">
-                                <textarea name="message" class="form-control" rows="4" placeholder="Your Message" required></textarea>
+
+                                <textarea id="message"
+                                          class="form-control"
+                                          rows="4"
+                                          placeholder="Your Message"
+                                          required></textarea>
+
                             </div>
+
                             <div class="col-12">
-                                <button type="submit" class="btn-submit">
-                                    <i class="bi bi-send me-2"></i>Send Message
+
+                                <button type="submit"
+                                        class="btn-submit">
+
+                                    <i class="bi bi-send me-2"></i>
+                                    Send Message
+
                                 </button>
+
                             </div>
+
                         </div>
+
                     </form>
+
                 </div>
+
             </div>
+
         </div>
+
     </div>
 </section>
+
+<!-- =================== MAIL SCRIPT =================== -->
+
+<script>
+
+document.getElementById("contact-form")
+.addEventListener("submit", function(e) {
+
+    e.preventDefault();
+
+    let name = document.getElementById("name").value;
+    let phone = document.getElementById("phone").value;
+    let email = document.getElementById("email").value;
+    let roomType = document.getElementById("roomType").value;
+    let message = document.getElementById("message").value;
+
+    let subject = "New Hostel Inquiry";
+
+    let body =
+        "Name: " + name + "%0D%0A" +
+        "Phone: " + phone + "%0D%0A" +
+        "Email: " + email + "%0D%0A" +
+        "Room Type: " + roomType + "%0D%0A%0D%0A" +
+        "Message:%0D%0A" + message;
+
+    window.location.href =
+        "mailto:shailendrafalle02@gmail.com" +
+        "?subject=" + subject +
+        "&body=" + body;
+
+});
+
+</script>
 
 <!-- =================== MAP =================== -->
 <div class="map-section">
