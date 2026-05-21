@@ -1,0 +1,1257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Shreesha Boys Hostel | Narhe, Pune</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #1a1a2e;
+            --secondary: #16213e;
+            --accent: #e94560;
+            --accent2: #0f3460;
+            --light: #f8f9fa;
+            --gold: #f5a623;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* =================== NAVBAR =================== */
+        .navbar {
+            background: rgba(26, 26, 46, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            transition: all 0.4s ease;
+        }
+        .navbar.scrolled {
+            padding: 8px 0;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.6rem;
+            color: #fff !important;
+        }
+        .navbar-brand span {
+            color: var(--accent);
+        }
+        .nav-link {
+            color: rgba(255,255,255,0.85) !important;
+            font-weight: 500;
+            margin: 0 8px;
+            transition: 0.3s;
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 50%;
+            background: var(--accent);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+        .nav-link:hover::after {
+            width: 70%;
+        }
+        .nav-link:hover {
+            color: #fff !important;
+        }
+        .navbar-toggler {
+            border: none;
+            color: #fff;
+        }
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+        .nav-btn {
+            background: var(--accent);
+            color: #fff !important;
+            padding: 8px 22px !important;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        .nav-btn:hover {
+            background: #c0374d;
+            transform: scale(1.05);
+        }
+
+        /* =================== HERO =================== */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, rgba(26,26,46,0.92), rgba(15,52,96,0.88)),
+                        url('https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=1600') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: var(--accent);
+            border-radius: 50%;
+            top: -100px;
+            right: -100px;
+            opacity: 0.15;
+            animation: pulse 4s ease-in-out infinite;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: var(--gold);
+            border-radius: 50%;
+            bottom: -80px;
+            left: -80px;
+            opacity: 0.1;
+            animation: pulse 5s ease-in-out infinite reverse;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+        .hero-content {
+            z-index: 1;
+        }
+        .hero h1 {
+            font-size: 3.8rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 10px;
+        }
+        .hero h1 span {
+            color: var(--accent);
+        }
+        .hero .location {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.75);
+            margin-bottom: 15px;
+        }
+        .hero .location i {
+            color: var(--accent);
+            margin-right: 5px;
+        }
+        .hero .tagline {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.85);
+            margin-bottom: 35px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .hero-buttons .btn-hero-primary {
+            background: var(--accent);
+            color: #fff;
+            padding: 14px 35px;
+            border-radius: 50px;
+            font-weight: 600;
+            border: none;
+            margin: 8px;
+            transition: 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .hero-buttons .btn-hero-primary:hover {
+            background: #c0374d;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(233,69,96,0.4);
+        }
+        .hero-buttons .btn-hero-secondary {
+            background: transparent;
+            color: #fff;
+            padding: 14px 35px;
+            border-radius: 50px;
+            font-weight: 600;
+            border: 2px solid rgba(255,255,255,0.5);
+            margin: 8px;
+            transition: 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .hero-buttons .btn-hero-secondary:hover {
+            border-color: #fff;
+            background: rgba(255,255,255,0.1);
+            transform: translateY(-3px);
+        }
+
+        /* =================== STATS =================== */
+        .stats-section {
+            background: var(--primary);
+            padding: 40px 0;
+            color: #fff;
+        }
+        .stat-item {
+            text-align: center;
+            padding: 15px;
+        }
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--accent);
+        }
+        .stat-label {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.7);
+            margin-top: 5px;
+        }
+
+        /* =================== ABOUT =================== */
+        .about-section {
+            padding: 80px 0;
+            background: #fff;
+        }
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .section-title span {
+            color: var(--accent);
+        }
+        .section-subtitle {
+            text-align: center;
+            color: #777;
+            margin-bottom: 50px;
+            font-size: 1rem;
+        }
+        .about-image {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            position: relative;
+        }
+        .about-image img {
+            width: 100%;
+            height: 380px;
+            object-fit: contain;
+            transition: transform 0.5s;
+        }
+        .about-image:hover img {
+            transform: scale(1.03);
+        }
+        .about-badge {
+            position: absolute;
+            bottom: 5px;
+            left: 150px;
+            background: var(--accent);
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-weight: 600;
+            z-index: 2;
+        }
+        .about-text h3 {
+            font-weight: 700;
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+        }
+        .about-text p {
+            color: #666;
+            line-height: 1.8;
+        }
+        .about-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+        .about-list li {
+            padding: 8px 0;
+            font-weight: 500;
+            color: #444;
+        }
+        .about-list li i {
+            color: var(--accent);
+            margin-right: 10px;
+            font-size: 1.1rem;
+        }
+
+        /* =================== FEATURES =================== */
+        .features-section {
+            padding: 80px 0;
+            background: var(--light);
+        }
+        .feature-card {
+            background: #fff;
+            border-radius: 15px;
+            padding: 35px 25px;
+            text-align: center;
+            transition: all 0.4s ease;
+            border: 1px solid #eee;
+            height: 100%;
+        }
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+            border-color: var(--accent);
+        }
+        .feature-icon {
+            width: 75px;
+            height: 75px;
+            background: linear-gradient(135deg, var(--accent), var(--accent2));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.8rem;
+            color: #fff;
+            transition: 0.3s;
+        }
+        .feature-card:hover .feature-icon {
+            transform: rotateY(180deg);
+        }
+        .feature-card h5 {
+            font-weight: 700;
+            margin-bottom: 10px;
+            font-size: 1.15rem;
+        }
+        .feature-card p {
+            color: #777;
+            font-size: 0.9rem;
+        }
+
+        /* =================== ROOMS =================== */
+        .rooms-section {
+            padding: 80px 0;
+            background: #fff;
+        }
+        .room-card {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            background: #fff;
+        }
+        .room-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+        }
+        .room-img {
+            height: 220px;
+            overflow: hidden;
+        }
+        .room-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        .room-card:hover .room-img img {
+            transform: scale(1.1);
+        }
+        .room-info {
+            padding: 25px;
+        }
+        .room-type {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+        .room-info h5 {
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        .room-info p {
+            font-size: 0.9rem;
+            color: #777;
+            margin-bottom: 15px;
+        }
+        .room-price {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+        .room-price span {
+            font-size: 0.85rem;
+            font-weight: 400;
+            color: #999;
+        }
+        .room-amenities {
+            display: flex;
+            gap: 12px;
+            margin-top: 12px;
+            flex-wrap: wrap;
+        }
+        .room-amenities span {
+            font-size: 0.78rem;
+            background: var(--light);
+            padding: 4px 10px;
+            border-radius: 20px;
+            color: #555;
+        }
+
+        /* =================== TESTIMONIALS =================== */
+        .testimonials-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: #fff;
+        }
+        .testimonials-section .section-title,
+        .testimonials-section .section-subtitle {
+            color: #fff;
+        }
+        .testimonials-section .section-subtitle {
+            color: rgba(255,255,255,0.6);
+        }
+        .testimonial-card {
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.1);
+            height: 100%;
+            transition: 0.3s;
+        }
+        .testimonial-card:hover {
+            background: rgba(255,255,255,0.12);
+            transform: translateY(-5px);
+        }
+        .testimonial-avatar {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 3px solid var(--accent);
+        }
+        .testimonial-card .stars {
+            color: var(--gold);
+            margin-bottom: 15px;
+        }
+        .testimonial-card p {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.8);
+            font-style: italic;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+        .testimonial-card h6 {
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+        .testimonial-card .college {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* =================== GALLERY =================== */
+        .gallery-section {
+            padding: 80px 0;
+            background: var(--light);
+        }
+        .gallery-item {
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            height: 250px;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(26,26,46,0.8), transparent);
+            opacity: 0;
+            transition: 0.4s;
+            display: flex;
+            align-items: flex-end;
+            padding: 20px;
+        }
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        .gallery-overlay span {
+            color: #fff;
+            font-weight: 600;
+        }
+
+        /* =================== CONTACT =================== */
+        .contact-section {
+            padding: 80px 0;
+            background: #fff;
+        }
+        .contact-info-card {
+            background: var(--primary);
+            border-radius: 15px;
+            padding: 40px;
+            color: #fff;
+            height: 100%;
+        }
+        .contact-info-card h4 {
+            font-weight: 700;
+            margin-bottom: 25px;
+        }
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+        .contact-item-icon {
+            width: 45px;
+            height: 45px;
+            background: rgba(233,69,96,0.2);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            font-size: 1.2rem;
+            flex-shrink: 0;
+            margin-right: 15px;
+        }
+        .contact-item-text h6 {
+            font-weight: 600;
+            margin-bottom: 3px;
+        }
+        .contact-item-text p {
+            color: rgba(255,255,255,0.6);
+            font-size: 0.9rem;
+            margin: 0;
+        }
+        .social-links {
+            margin-top: 30px;
+        }
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            margin-right: 10px;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+        .social-links a:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+        }
+        .contact-form {
+            background: var(--light);
+            border-radius: 15px;
+            padding: 40px;
+            height: 100%;
+        }
+        .contact-form h4 {
+            font-weight: 700;
+            margin-bottom: 25px;
+        }
+        .form-control {
+            border: 2px solid #eee;
+            border-radius: 10px;
+            padding: 12px 18px;
+            font-size: 0.95rem;
+            transition: 0.3s;
+        }
+        .form-control:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(233,69,96,0.1);
+        }
+        .btn-submit {
+            background: var(--accent);
+            color: #fff;
+            padding: 12px 35px;
+            border-radius: 50px;
+            border: none;
+            font-weight: 600;
+            transition: 0.3s;
+            width: 100%;
+        }
+        .btn-submit:hover {
+            background: #c0374d;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(233,69,96,0.3);
+        }
+
+        /* =================== MAP =================== */
+        .map-section {
+            width: 100%;
+            height: 400px;
+        }
+        .map-section iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* =================== FOOTER =================== */
+        footer {
+            background: var(--primary);
+            color: #fff;
+            padding: 60px 0 20px;
+        }
+        .footer-brand {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        .footer-brand span {
+            color: var(--accent);
+        }
+        .footer-text {
+            color: rgba(255,255,255,0.5);
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+        .footer-title {
+            font-weight: 600;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        .footer-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--accent);
+            border-radius: 5px;
+        }
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        .footer-links a {
+            color: rgba(255,255,255,0.5);
+            text-decoration: none;
+            transition: 0.3s;
+            font-size: 0.9rem;
+        }
+        .footer-links a:hover {
+            color: var(--accent);
+            padding-left: 5px;
+        }
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            margin-top: 40px;
+            padding-top: 20px;
+            text-align: center;
+            color: rgba(255,255,255,0.4);
+            font-size: 0.85rem;
+        }
+
+        /* =================== SCROLL TO TOP =================== */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--accent);
+            color: #fff;
+            border-radius: 50%;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            cursor: pointer;
+            transition: 0.3s;
+            z-index: 999;
+            border: none;
+            box-shadow: 0 5px 15px rgba(233,69,96,0.4);
+        }
+        .scroll-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(233,69,96,0.5);
+        }
+        .scroll-top.active {
+            display: flex;
+        }
+
+        /* =================== RESPONSIVE =================== */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .hero .tagline {
+                font-size: 1rem;
+            }
+            .stat-number {
+                font-size: 2rem;
+            }
+            .section-title {
+                font-size: 1.7rem;
+            }
+            .gallery-item {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- =================== NAVBAR =================== -->
+<nav class="navbar navbar-expand-lg fixed-top" id="mainNavbar">
+    <div class="container">
+        <a class="navbar-brand" href="#">Shreesha <span>Hostel</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+            <i class="bi bi-list" style="font-size: 1.5rem; color: #fff;"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navMenu">
+            <ul class="navbar-nav ms-auto align-items-center">
+                <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#features">Amenities</a></li>
+                <li class="nav-item"><a class="nav-link" href="#rooms">Rooms</a></li>
+                <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                <li class="nav-item"><a class="nav-link nav-btn" href="login.jsp">Login</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- =================== HERO =================== -->
+<section class="hero" id="home">
+    <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
+        <p class="location"><i class="bi bi-geo-alt-fill"></i> Zeal Chowk, Narhe, Pune</p>
+        <h1>Welcome to <br><span>Shreesha</span> Boys Hostel</h1>
+        <p class="tagline">Your home away from home. Experience comfortable living with modern amenities, nutritious food, and a safe environment for students.</p>
+        <div class="hero-buttons">
+            <a href="#rooms" class="btn-hero-primary"><i class="bi bi-building me-2"></i>Explore Rooms</a>
+            <a href="#contact" class="btn-hero-secondary"><i class="bi bi-telephone me-2"></i>Contact Us</a>
+        </div>
+    </div>
+</section>
+
+<!-- =================== STATS =================== -->
+<section class="stats-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="0">
+                <div class="stat-item">
+                    <div class="stat-number" id="stat1">150+</div>
+                    <div class="stat-label">Happy Students</div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="100">
+                <div class="stat-item">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Spacious Rooms</div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="200">
+                <div class="stat-item">
+                    <div class="stat-number">5+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="300">
+                <div class="stat-item">
+                    <div class="stat-number">4.8</div>
+                    <div class="stat-label">Student Rating</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =================== ABOUT =================== -->
+<section class="about-section" id="about">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-up">About <span>Shreesha</span></h2>
+        <p class="section-subtitle" data-aos="fade-up">A premium boys hostel near top colleges in Narhe, Pune</p>
+
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6" data-aos="fade-right">
+                <div class="about-image">
+                    <img src="images/hostel_new.png" alt="Hostel Building">
+                    <div class="about-badge"><i class="bi bi-award me-2"></i>Trusted Since 2020</div>
+                </div>
+            </div>
+            <div class="col-lg-6" data-aos="fade-left">
+                <div class="about-text">
+                    <h3>Your Comfortable Stay in Pune Starts Here</h3>
+                    <p>Shreesha Boys Hostel is strategically located at Zeal Chowk, Narhe, Pune — just minutes away from top educational institutions. We provide a clean, secure, and homely environment for students pursuing their dreams.</p>
+                    <!--    <p>Our hostel is designed to offer the best living experience with well-furnished rooms, healthy meals, high-speed WiFi, and 24/7 security.</p>
+                    -->
+                            <ul class="about-list">
+                        <li><i class="bi bi-check-circle-fill"></i> Prime location near Zeal College & other institutes</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Hygienic & nutritious vegetarian/non-veg meals</li>
+                        <li><i class="bi bi-check-circle-fill"></i> 24/7 CCTV surveillance & security</li>
+                        <li><i class="bi bi-check-circle-fill"></i> High-speed WiFi connectivity</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Spacious common areas & study rooms</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Regular cleaning & maintenance</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =================== FEATURES =================== -->
+<section class="features-section" id="features">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Our <span>Amenities</span></h2>
+        <p class="section-subtitle" data-aos="fade-up">Everything you need for a comfortable hostel life</p>
+
+        <div class="row g-4">
+            <div class="col-lg-3 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="0">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="bi bi-wifi"></i></div>
+                    <h5>High-Speed WiFi</h5>
+                    <p>Stay connected with blazing fast internet for studies & entertainment</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="bi bi-egg-fried"></i></div>
+                    <h5>Nutritious Meals</h5>
+                    <p>Healthy breakfast, lunch & dinner prepared with care daily</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="bi bi-shield-check"></i></div>
+                    <h5>24/7 Security</h5>
+                    <p>CCTV cameras & security guards for your complete safety</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="bi bi-droplet"></i></div>
+                    <h5>Hot Water</h5>
+                    <p>24/7 hot water supply in all bathrooms</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="400">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="bi bi-book"></i></div>
+                    <h5>Study Room</h5>
+                    <p>Quiet and well-lit study area for focused learning</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="500">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="bi bi-tv"></i></div>
+                    <h5>Recreation Area</h5>
+                    <p>TV room, indoor games & common lounge for relaxation</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="600">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="bi bi-car-front"></i></div>
+                    <h5>Parking Space</h5>
+                    <p>Dedicated parking for two-wheelers & bicycles</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="700">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="bi bi-lightning-charge"></i></div>
+                    <h5>Power Backup</h5>
+                    <p>Uninterrupted power supply with generator backup</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =================== ROOMS =================== -->
+<section class="rooms-section" id="rooms">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Our <span>Rooms</span></h2>
+        <p class="section-subtitle" data-aos="fade-up">Choose the room that fits your comfort and budget</p>
+
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="0">
+                <div class="room-card">
+                    <div class="room-img">
+                        <img src="images/sp_room.jpeg" alt="Single Room">
+                    </div>
+                    <div class="room-info">
+                        <div class="room-type">Premium</div>
+                        <h5>Single Sharing</h5>
+                        <p>A private room for students who prefer solitude and focused study environment.</p>
+                        <div class="room-price">₹45,000 <span>/ year</span></div>
+                        <div class="room-amenities">
+                            <span><i class="bi bi-wifi"></i> WiFi</span>
+                            <span><i class="bi bi-fan"></i> AC</span>
+                            <span><i class="bi bi-person"></i> 1 Bed</span>
+                            <span><i class="bi bi-lamp"></i> Study Desk</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="room-card">
+                    <div class="room-img">
+                        <img src="images/sp_room_3.jpeg" alt="Double Room">
+                    </div>
+                    <div class="room-info">
+                        <div class="room-type">Popular</div>
+                        <h5>Double Sharing</h5>
+                        <p>Share a spacious room with a roommate. Ideal balance of comfort and affordability.</p>
+                        <div class="room-price">₹40,000 <span>/ year</span></div>
+                        <div class="room-amenities">
+                            <span><i class="bi bi-wifi"></i> WiFi</span>
+                            <span><i class="bi bi-fan"></i> Fan</span>
+                            <span><i class="bi bi-people"></i> 2 Beds</span>
+                            <span><i class="bi bi-lamp"></i> Study Desk</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="room-card">
+                    <div class="room-img">
+                        <img src="images/hall.jpeg" alt="Triple Room">
+                    </div>
+                    <div class="room-info">
+                        <div class="room-type">Budget Friendly</div>
+                        <h5>Triple Sharing</h5>
+                        <p>An affordable option with 3 beds in a spacious and well-ventilated room.</p>
+                        <div class="room-price">₹35,000 <span>/ year</span></div>
+                        <div class="room-amenities">
+                            <span><i class="bi bi-wifi"></i> WiFi</span>
+                            <span><i class="bi bi-fan"></i> Fan</span>
+                            <span><i class="bi bi-people"></i> 3 Beds</span>
+                            <span><i class="bi bi-lamp"></i> Shared Desk</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =================== TESTIMONIALS =================== -->
+<section class="testimonials-section" id="testimonials">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-up">What Students <span>Say</span></h2>
+        <p class="section-subtitle" data-aos="fade-up">Real reviews from our hostel residents</p>
+
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="0">
+                <div class="testimonial-card">
+                    <img src="images/download.jpg" alt="Student" class="testimonial-avatar">
+                    <div class="stars">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                    </div>
+                    <p>"Shreesha Hostel is amazing! The food is great, rooms are clean, and the staff is very helpful. Best hostel near Zeal College."</p>
+                    <h6>Rahul Patil</h6>
+                    <span class="college">Zeal College of Engineering</span>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="testimonial-card">
+                    <img src="images/download.jpg" alt="Student" class="testimonial-avatar">
+                    <div class="stars">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-half"></i>
+                    </div>
+                    <p>"I've been staying here for 2 years. The WiFi is fast, security is tight, and it truly feels like home away from home."</p>
+                    <h6>Amit Jadhav</h6>
+                    <span class="college">JSPM, Narhe</span>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="testimonial-card">
+                    <img src="images/download.jpg" alt="Student" class="testimonial-avatar">
+                    <div class="stars">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                    </div>
+                    <p>"Affordable pricing, clean environment, and the location is perfect. Highly recommend to all students coming to Narhe!"</p>
+                    <h6>Vishal Jadhav</h6>
+                    <span class="college">Sinhgad Institute, Narhe</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =================== GALLERY =================== -->
+<section class="gallery-section" id="gallery">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Photo <span>Gallery</span></h2>
+        <p class="section-subtitle" data-aos="fade-up">Take a virtual tour of our hostel</p>
+
+        <div class="row g-3">
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="0">
+                <div class="gallery-item">
+                    <img src="images/hall.jpeg" alt="Room">
+                    <div class="gallery-overlay"><span><i class="bi bi-zoom-in me-2"></i>Rooms</span></div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="gallery-item">
+                    <img src="images/hall_3.jpeg" alt="Dining">
+                    <div class="gallery-overlay"><span><i class="bi bi-zoom-in me-2"></i>Triple Sharing</span></div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="gallery-item">
+                    <img src="images/hall_door.jpeg" alt="Study Room">
+                    <div class="gallery-overlay"><span><i class="bi bi-zoom-in me-2"></i>Double Sharing</span></div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="gallery-item">
+                    <img src="images/sp_room.jpeg" alt="Common Area">
+                    <div class="gallery-overlay"><span><i class="bi bi-zoom-in me-2"></i>Special Room</span></div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                <div class="gallery-item">
+                    <img src="images/front_stairs.jpeg" alt="Bathroom">
+                    <div class="gallery-overlay"><span><i class="bi bi-zoom-in me-2"></i>Stairs</span></div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+                <div class="gallery-item">
+                    <img src="images/gallery.jpeg" alt="Building">
+                    <div class="gallery-overlay"><span><i class="bi bi-zoom-in me-2"></i>Gallery</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =================== CONTACT =================== -->
+<section class="contact-section" id="contact">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Get In <span>Touch</span></h2>
+        <p class="section-subtitle" data-aos="fade-up">Have questions? We'd love to hear from you!</p>
+
+        <div class="row g-4">
+            <div class="col-lg-5" data-aos="fade-right">
+                <div class="contact-info-card">
+                    <h4>Contact Information</h4>
+
+                    <div class="contact-item">
+                        <div class="contact-item-icon"><i class="bi bi-geo-alt-fill"></i></div>
+                        <div class="contact-item-text">
+                            <h6>Address</h6>
+                            <p>Zeal Chowk, Narhe, Pune - 411041, Maharashtra, India</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-item-icon"><i class="bi bi-telephone-fill"></i></div>
+                        <div class="contact-item-text">
+                            <h6>Phone</h6>
+                            <p>+91 9922868252</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-item-icon"><i class="bi bi-envelope-fill"></i></div>
+                        <div class="contact-item-text">
+                            <h6>Email</h6>
+                            <p>info@shreeshahostel.com</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-item-icon"><i class="bi bi-clock-fill"></i></div>
+                        <div class="contact-item-text">
+                            <h6>Office Hours</h6>
+                            <p>Mon - Sat: 9:00 AM - 9:00 PM</p>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href=""><i class="bi bi-facebook"></i></a>
+                        <a href=""><i class="bi bi-instagram"></i></a>
+                        <a href=""><i class="bi bi-whatsapp"></i></a>
+                        <a href=""><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-7" data-aos="fade-left">
+                <div class="contact-form">
+                    <h4>Send us a Message</h4>
+                    <form action="ContactServlet" method="post">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="tel" name="phone" class="form-control" placeholder="Phone Number" required>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="email" name="email" class="form-control" placeholder="Email Address" required>
+                            </div>
+                            <div class="col-md-6">
+                                <select name="roomType" class="form-control" required>
+                                    <option value="" disabled selected>Select Room Type</option>
+                                    <option>Single Sharing</option>
+                                    <option>Double Sharing</option>
+                                    <option>Triple Sharing</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <textarea name="message" class="form-control" rows="4" placeholder="Your Message" required></textarea>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn-submit">
+                                    <i class="bi bi-send me-2"></i>Send Message
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =================== MAP =================== -->
+<div class="map-section">
+   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d180.18519835029377!2d73.82663134453121!3d18.446789060177693!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc295e1ccec37d7%3A0x1425bbbb206273ae!2sShreesha%20Boys%20Hostel%2FPG!5e1!3m2!1sen!2sin!4v1777051550371!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    
+</div>
+
+<!-- =================== FOOTER =================== -->
+<footer>
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+                <div class="footer-brand">Shreesha <span>Hostel</span></div>
+                <p class="footer-text">Shreesha Boys Hostel provides a safe, clean, and comfortable living space for students in Narhe, Pune. We are committed to making your stay memorable.</p>
+            </div>
+            <div class="col-lg-2 col-md-6">
+                <h6 class="footer-title">Quick Links</h6>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#features">Amenities</a></li>
+                    <li><a href="#rooms">Rooms</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h6 class="footer-title">Our Services</h6>
+                <ul class="footer-links">
+                    <li><a href="#">Room Allocation</a></li>
+                    <li><a href="#">Fee Payment</a></li>
+                    <li><a href="#">Complaint System</a></li>
+                    <li><a href="#">Meal Plans</a></li>
+                    <li><a href="#">Notice Board</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h6 class="footer-title">Nearby Colleges</h6>
+                <ul class="footer-links">
+                    <li><a href="#">Zeal College of Engineering</a></li>
+                    <li><a href="#">JSPM, Narhe</a></li>
+                    <li><a href="#">Sinhgad Institutes</a></li>
+                    <li><a href="#">Abhinav College</a></li>
+                    <li><a href="#">Jadhavar Group</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Shreesha Boys Hostel | Zeal Chowk, Narhe, Pune | All Rights Reserved</p>
+        </div>
+    </div>
+</footer>
+
+<!-- =================== SCROLL TO TOP =================== -->
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+    <i class="bi bi-arrow-up"></i>
+</button>
+
+<!-- =================== SCRIPTS =================== -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    // Initialize AOS
+    AOS.init({
+        once: true,
+        duration: 800
+    });
+
+    // Navbar scroll effect
+    window.addEventListener('scroll', function() {
+        const navbar = document.getElementById('mainNavbar');
+        const scrollTop = document.getElementById('scrollTop');
+
+        if (window.scrollY > 100) {
+            navbar.classList.add('scrolled');
+            scrollTop.classList.add('active');
+        } else {
+            navbar.classList.remove('scrolled');
+            scrollTop.classList.remove('active');
+        }
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+            // Close mobile menu
+            const navCollapse = document.getElementById('navMenu');
+            const bsCollapse = bootstrap.Collapse.getInstance(navCollapse);
+            if (bsCollapse) bsCollapse.hide();
+        });
+    });
+</script>
+
+</body>
+</html>
